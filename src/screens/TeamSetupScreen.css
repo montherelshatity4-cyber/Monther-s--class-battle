@@ -1,0 +1,65 @@
+.team-setup-screen {
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.setup-content {
+  width: min(1200px, 100%);
+  animation: setupFadeIn 0.55s ease-out;
+}
+
+.setup-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.battle-button-secondary {
+  display: block;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #1769aa;
+  padding: 18px 46px;
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes setupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .teams-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .teams-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .setup-title {
+    margin-bottom: 25px;
+  }
+}

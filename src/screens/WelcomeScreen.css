@@ -1,0 +1,74 @@
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.welcome-screen {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+}
+
+.welcome-content {
+  text-align: center;
+  animation: welcomeFadeIn 0.7s ease-out;
+}
+
+.welcome-title {
+  color: #ffffff;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: 1.08;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.title-line {
+  display: block;
+}
+
+.battle-button {
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: clamp(1.15rem, 2vw, 1.8rem);
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.battle-button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.battle-button-primary {
+  background: #ffffff;
+  color: #1769aa;
+  padding: 20px 52px;
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes welcomeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .welcome-title {
+    margin-bottom: 36px;
+  }
+
+  .battle-button-primary {
+    padding: 16px 28px;
+  }
+}
