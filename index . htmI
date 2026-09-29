@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monther's Class Battle</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #1769aa;
+      color: white;
+      overflow: hidden;
+    }
+
+    .screen {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      text-align: center;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .start-button,
+    .battle-button {
+      padding: 20px 50px;
+      font-size: 24px;
+      border-radius: 12px;
+      background: white;
+      color: #1769aa;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .setup-title {
+      font-size: 42px;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .teams {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .team-card {
+      background: white;
+      color: #222;
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      border: 6px solid transparent;
+    }
+
+    .team-color {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      border: 5px solid white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
+
+    .red {
+      background: #e53935;
+    }
+
+    .blue {
+      background: #1e88e5;
+    }
+
+    .green {
+      background: #43a047;
+    }
+
+    .yellow {
+      background: #fdd835;
+    }
+
+    .team-card h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .team-card input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 17px;
+      text-align: center;
+      outline: none;
+    }
+
+    .team-card input:focus {
+      border-color: #1769aa;
+    }
+
+    .battle-button {
+      margin-top: 35px;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        overflow: auto;
+      }
+
+      .teams {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .teams {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HOME SCREEN -->
+  <section id="homeScreen" class="screen">
+    <h1>Monther's Class Battle</h1>
+    <button class="start-button" onclick="showSetup()">
+      START THE BATTLE
+    </button>
+  </section>
+
+
+  <!-- TEAM SETUP SCREEN -->
+  <section id="setupScreen" class="screen hidden">
+
+    <h2 class="setup-title">Choose Your Team</h2>
+
+    <div class="teams">
+
+      <div class="team-card">
+        <div class="team-color red"></div>
+        <h3>RED TEAM</h3>
+        <input type="text" placeholder="Enter team name">
+      </div>
+
+      <div class="team-card">
+        <div class="team-color blue"></div>
+        <h3>BLUE TEAM</h3>
+        <input type="text" placeholder="Enter team name">
+      </div>
+
+      <div class="team-card">
+        <div class="team-color green"></div>
+        <h3>GREEN TEAM</h3>
+        <input type="text" placeholder="Enter team name">
+      </div>
+
+      <div class="team-card">
+        <div class="team-color yellow"></div>
+        <h3>YELLOW TEAM</h3>
+        <input type="text" placeholder="Enter team name">
+      </div>
+
+    </div>
+
+    <button class="battle-button" onclick="startGame()">
+      LET'S BATTLE
+    </button>
+
+  </section>
+
+
+  <script>
+    function showSetup() {
+      document.getElementById("homeScreen").classList.add("hidden");
+      document.getElementById("setupScreen").classList.remove("hidden");
+    }
+
+    function startGame() {
+      alert("The battle is ready! More features coming next.");
+    }
+  </script>
+
+</body>
+</html>
